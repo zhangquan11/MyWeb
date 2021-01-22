@@ -41,10 +41,10 @@
                 alert("请选择相加或者相乘")
             }
             if (add.checked){
-                param.action = "/add";
+                param.action = "/addV1";
             }
             if (mult.checked){
-                param.action = "/mult";
+                param.action = "/multV1";
             }
         }
     </script>

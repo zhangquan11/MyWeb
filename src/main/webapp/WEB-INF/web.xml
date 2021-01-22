@@ -5,23 +5,23 @@
          version="4.0">
     
     <servlet>
-        <servlet-name>add</servlet-name>
+        <servlet-name>addV1</servlet-name>
         <servlet-class>com.zq.myweb.controller.SumController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>addV1</servlet-name>
+        <url-pattern>/addV1</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>mult</servlet-name>
+        <servlet-name>multV1</servlet-name>
         <servlet-class>com.zq.myweb.controller.MultiplicationController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>mult</servlet-name>
-        <url-pattern>/mult</url-pattern>
+        <servlet-name>multV1</servlet-name>
+        <url-pattern>/multV1</url-pattern>
     </servlet-mapping>
     
 </web-app>
