@@ -25,3 +25,5 @@ logs
 /nbdist/
 /.nb-gradle/
 target
+.gitignore
+/out/
