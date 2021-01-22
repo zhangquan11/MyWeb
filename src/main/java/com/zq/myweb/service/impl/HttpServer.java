@@ -65,33 +65,21 @@ public class HttpServer extends Thread {
 
     private void response(String type,List<String> param) {
 
-        StringBuffer result = new StringBuffer();
-        result.append("HTTP /1.1 400 file not found /r/n");
-        result.append("Content-Type:text/html \r\n");
-        result.append("Content-Length:20 \r\n").append("\r\n");
+        Long value = 0l;
+
         if(type == null)return;
-        else if(type.equals("/sum")){
-            Long value = Long.valueOf(param.get(0))+Long.valueOf(param.get(1));
-            result.append("<h1 >");
-            result.append(value.toString());
-            if(value.toString().length() < 16){
-                for (int i = 1 ; i < 16 - value.toString().length() ; i++){
-                    result.append(" ");
-                }
-            }
-            result.append("</h1>");
+        else if (type.equals("/sum")){
+            value = Long.valueOf(param.get(0))+Long.valueOf(param.get(1));
         }
-        else if(type.equals("/mult")){
-            Long value = Long.valueOf(param.get(0))*Long.valueOf(param.get(1));
-            result.append("<h1 >");
-            result.append(value.toString());
-            if(value.toString().length() < 16){
-                for (int i = 1 ; i < 16 - value.toString().length() ; i++){
-                    result.append(" ");
-                }
-            }
-            result.append("</h1>");
+        else if (type.equals("/mult")){
+            value = Long.valueOf(param.get(0))*Long.valueOf(param.get(1));
         }
+        Integer len = value.toString().length() + 5;
+        StringBuffer result = new StringBuffer();
+        result.append("HTTP /1.1 200 ok /r/n");
+        result.append("Content-Type:text/html \r\n");
+        result.append("Content-Length:"+ len.toString() + "\r\n").append("\r\n");
+        result.append("<h1 >").append(value.toString()).append("</h1>");
 
         try {
             out.write(result.toString().getBytes());
