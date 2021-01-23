@@ -11,7 +11,7 @@
 
     <servlet-mapping>
         <servlet-name>addV1</servlet-name>
-        <url-pattern>/addV1</url-pattern>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -21,7 +21,7 @@
 
     <servlet-mapping>
         <servlet-name>multV1</servlet-name>
-        <url-pattern>/multV1</url-pattern>
+        <url-pattern>/mult</url-pattern>
     </servlet-mapping>
     
 </web-app>
